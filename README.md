@@ -25,6 +25,9 @@ cd rice
 | [terminal](https://github.com/0124212/terminal) | Windows Terminal, Oh My Posh, Starship, Yazi, Cava, Fastfetch, GlazeWM, Zebar, Tacky Borders |
 | [vscode](https://github.com/0124212/vscode) | VS Code — Doki Theme + JetBrains Mono |
 | [librewolf](https://github.com/0124212/librewolf) | LibreWolf — Betterfox + FoxOne + userChrome.css |
+| [betterbird](https://github.com/0124212/betterbird) | Betterbird — Dracula dark theme + rice configs |
+| [mpv](https://github.com/0124212/mpv) | mpv — HQ config + keybinds |
+| [obs](https://github.com/0124212/obs) | OBS — Scene collection + hotkeys |
 | [zebar](https://github.com/0124212/zebar) | Zebar — paix minimalist bar |
 | [thicc-zebar](https://github.com/0124212/thicc-zebar) | Zebar — thicc watermelon variant |
 
@@ -37,6 +40,9 @@ cd rice
 | **Everything** | Instant file search |
 | **Lively Wallpaper** | Animated backgrounds |
 | **keyviz** | Keystroke visualizer |
+| **Betterbird** | Email + calendar (Thunderbird fork) |
+| **mpv** | Video player |
+| **OBS** | Screen recording / streaming |
 
 ## Scripts
 

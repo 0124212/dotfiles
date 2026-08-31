@@ -64,11 +64,14 @@ Write-Host "`n[1/4] Cloning Rice Repos" -ForegroundColor Magenta
 New-Item -ItemType Directory -Path $riceDir -Force | Out-Null
 
 $repos = @{
-    "terminal" = "https://github.com/0124212/terminal.git"
-    "vscode"   = "https://github.com/0124212/vscode.git"
-    "librewolf"= "https://github.com/0124212/librewolf.git"
-    "zebar"    = "https://github.com/0124212/zebar.git"
-    "thicc-zebar" = "https://github.com/0124212/thicc-zebar.git"
+    "terminal"   = "https://github.com/0124212/terminal.git"
+    "vscode"     = "https://github.com/0124212/vscode.git"
+    "librewolf"  = "https://github.com/0124212/librewolf.git"
+    "zebar"      = "https://github.com/0124212/zebar.git"
+    "thicc-zebar"= "https://github.com/0124212/thicc-zebar.git"
+    "betterbird" = "https://github.com/0124212/betterbird.git"
+    "mpv"        = "https://github.com/0124212/mpv.git"
+    "obs"        = "https://github.com/0124212/obs.git"
 }
 
 foreach ($repo in $repos.GetEnumerator()) {
@@ -99,6 +102,11 @@ Install-Winget "LibreWolf.LibreWolf" "LibreWolf"
 # Communication
 Install-Winget "Element.Element" "Element"
 Install-Winget "Telegram.TelegramDesktop" "Telegram"
+Install-Winget "Betterbird.Betterbird" "Betterbird"
+
+# Media
+Install-Winget "mpv.mpv" "mpv"
+Install-Winget "OBSProject.OBSStudio" "OBS Studio"
 
 # Utilities
 Install-Winget "Parsec.Parsec" "Parsec"
@@ -120,7 +128,10 @@ Write-Host "`n[3/4] Running Repo Installers" -ForegroundColor Magenta
 $installers = @(
     "$riceDir\terminal\install.ps1",
     "$riceDir\vscode\install.ps1",
-    "$riceDir\librewolf\install.ps1"
+    "$riceDir\librewolf\install.ps1",
+    "$riceDir\betterbird\install.ps1",
+    "$riceDir\mpv\install.ps1",
+    "$riceDir\obs\install.ps1"
 )
 
 foreach ($installer in $installers) {

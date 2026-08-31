@@ -1,0 +1,30 @@
+.logo {
+  display: flex;
+  width: auto;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  font-size: 15px;
+  color: var(--white);
+
+  .face,
+  .kaomoji {
+    letter-spacing: 0;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  &.clicked-animated .content {
+    animation: appear 0.2s ease;
+  }
+}
+
+.search {
+  display: none;
+  width: 24px;
+  padding: 1px 3px 2px;
+  margin-right: 3px;
+  &.clicked-animated .content {
+    animation: appear 0.2s ease;
+  }
+}

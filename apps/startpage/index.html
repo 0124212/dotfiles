@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>home</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=5" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <h1><span id="userName"></span></h1>
+          <p>Today is <span id="currentDate">Monday 1, January 2000</span>.</p>
+        </div>
+        <div class="header-right">
+          <span id="weather" class="weather"></span>
+          <p id="currentTime">00:00 PM</p>
+        </div>
+      </header>
+
+      <!-- Search Bar -->
+      <form id="searchForm" class="search-bar" action="https://duckduckgo.com/" method="GET">
+        <input type="text" id="searchInput" name="q" placeholder="! for bangs" autocomplete="off" />
+      </form>
+
+      <!-- Timezone Strip -->
+      <a href="https://www.timeanddate.com/worldclock/" target="_blank" class="tz-box">
+        <div class="tz-strip" id="tzStrip"></div>
+      </a>
+
+      <main id="cardContainer"></main>
+    </div>
+    <script src="./app.js?v=27"></script>
+  </body>
+</html>

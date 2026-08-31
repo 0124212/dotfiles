@@ -1,0 +1,27 @@
+.battery {
+  display: flex;
+  color: var(--white);
+  width: auto;
+  min-width: 3.2rem;
+  padding: 0 6px;
+  align-items: center;
+  justify-content: center;
+  &.clicked-animated .content {
+    animation: appear 0.2s ease;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.battery:hover {
+  animation: hoverbutton 0.1s ease forwards;
+}
+
+.i-battery {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}

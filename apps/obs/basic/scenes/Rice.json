@@ -1,0 +1,89 @@
+{
+    "name": "Rice",
+    "DesktopAudioDevice1": {
+        "name": "Desktop Audio",
+        "id": "wasapi_output_capture",
+        "settings": {
+            "device_id": "default"
+        },
+        "mixers": 255,
+        "sync": 0,
+        "flags": 0,
+        "volume": 1.0,
+        "balance": 0.5,
+        "enabled": true,
+        "muted": false
+    },
+    "AuxAudioDevice1": {
+        "name": "Mic/Aux",
+        "id": "wasapi_input_capture",
+        "settings": {
+            "device_id": "default"
+        },
+        "mixers": 255,
+        "sync": 0,
+        "flags": 0,
+        "volume": 1.0,
+        "balance": 0.5,
+        "enabled": true,
+        "muted": false
+    },
+    "sources": [
+        {
+            "name": "Display Capture",
+            "id": "monitor_capture",
+            "settings": {
+                "monitor_id": "default",
+                "capture_cursor": true
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false
+        },
+        {
+            "name": "Window Capture",
+            "id": "window_capture",
+            "settings": {
+                "window": ""
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": false,
+            "muted": false
+        },
+        {
+            "name": "Game Capture",
+            "id": "game_capture",
+            "settings": {
+                "capture_mode": 0,
+                "window": ""
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": false,
+            "muted": false
+        }
+    ],
+    "scene_order": [
+        { "name": "Display Capture" }
+    ],
+    "current_scene": "Display Capture",
+    "current_program_scene": "Display Capture",
+    "current_transition": "Fade",
+    "transition_duration": 300,
+    "resolution": {
+        "x": 1920,
+        "y": 1080
+    },
+    "version": 2
+}

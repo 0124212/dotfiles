@@ -1,0 +1,16 @@
+.current-window {
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 700px;
+  text-overflow: ellipsis;
+  text-align: center;
+  will-change: contents;
+  contain: layout style;
+  transform: translateZ(0);
+  transition: opacity 0.15s ease-out;
+}
+
+.current-window:empty {
+  opacity: 0;
+}

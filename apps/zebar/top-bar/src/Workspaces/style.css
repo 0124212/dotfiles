@@ -1,0 +1,61 @@
+.workspaces {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 4px;
+  position: relative;
+  height: 1.6rem;
+  background: none;
+}
+
+.workspace-pill {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  bottom: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  pointer-events: none;
+  transition:
+    transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.workspace {
+  position: relative;
+  z-index: 1;
+  min-width: 1.8rem;
+  height: 1.2rem;
+  padding: 0 3px;
+  justify-content: center;
+  background: none;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.45);
+  border: none;
+  border-radius: 4px;
+  transition: color 0.18s ease;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.workspace:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.workspace.focused {
+  color: rgba(255, 255, 255, 1);
+}
+
+.workspace.focused span {
+  animation: appear 0.2s ease;
+}
+
+.workspace-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  font-size: 0.6rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}

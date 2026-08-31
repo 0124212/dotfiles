@@ -1,0 +1,54 @@
+/* Betterbird userContent.css — dark theme for message body */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root {
+  --bb-bg: #282A36;
+  --bb-fg: #F8F8F2;
+  --bb-accent: #BD93F9;
+  --bb-border: #44475A;
+}
+
+/* Message body */
+.msgbody {
+  background-color: var(--bb-bg) !important;
+  color: var(--bb-fg) !important;
+  font-family: 'JetBrainsMono NF', 'Segoe UI', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  padding: 16px !important;
+}
+
+/* Links */
+.msgbody a {
+  color: var(--bb-accent) !important;
+  text-decoration: none !important;
+}
+
+.msgbody a:hover {
+  text-decoration: underline !important;
+}
+
+/* Quotes */
+blockquote {
+  border-left: 3px solid var(--bb-accent) !important;
+  padding-left: 12px !important;
+  color: #6272A4 !important;
+  margin: 8px 0 !important;
+}
+
+/* Code */
+pre, code {
+  background-color: #21222C !important;
+  border: 1px solid var(--bb-border) !important;
+  border-radius: 4px !important;
+  padding: 8px !important;
+  font-family: 'JetBrainsMono NF', monospace !important;
+  font-size: 12px !important;
+}
+
+/* Images */
+img {
+  max-width: 100% !important;
+  border-radius: 4px !important;
+}

@@ -1,0 +1,278 @@
+/* Custom Variables | Color Scheme */
+
+:root {
+  --primary: #fabd2f;
+  --text-light: #FFFFFF;
+  --background: #282828;
+  --background-light: #1d2021;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  background-color: var(--background);
+}
+
+html, body {
+  min-height: 100vh;
+  height: 100%;
+}
+
+body {
+  color: var(--text-light);
+  font-family: "IBM Plex Mono", monospace;
+
+  padding: 2rem 4rem;
+
+  background-color: var(--background);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+h1 > span {
+  color: var(--primary);
+}
+
+.header {
+  font-weight: 400;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#currentDate {
+  color: var(--primary);
+}
+
+#currentTime {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.weather {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Timezone Strip */
+.tz-box {
+  display: block;
+  margin-top: 2rem;
+  background: var(--background-light);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 0.6rem 0;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s;
+  overflow: hidden;
+}
+
+.tz-box:hover {
+  border-color: var(--primary);
+}
+
+.tz-strip {
+  display: flex;
+  gap: 3rem;
+  animation: tz-scroll 40s linear infinite;
+  width: max-content;
+}
+
+.tz-box:hover .tz-strip {
+  animation-play-state: paused;
+}
+
+@keyframes tz-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.tz-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.tz-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+}
+
+.tz-time {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.tz-day {
+  font-size: 0.65rem;
+  opacity: 0.5;
+  margin-left: 0.25rem;
+}
+
+/* Search Bar */
+.search-bar {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.search-bar input {
+  width: 100%;
+  background: var(--background-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: white;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.25rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: var(--primary);
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Cards */
+main {
+  margin-top: 4rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card:link,
+.card:visited {
+  color: white;
+  text-decoration: none;
+
+  width: 150px;
+  height: 150px;
+
+  background-color: var(--background-light);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+
+  outline: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: cardIn 0.35s ease forwards;
+}
+
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover,
+.card:focus {
+  border-color: var(--card-color);
+  color: var(--card-color);
+  transform: translateY(0) scale(1.04);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.card:focus > .card__name,
+.card:hover > .card__name {
+  bottom: 0;
+  color: var(--card-color);
+}
+
+.card__icon {
+  font-size: 2rem;
+
+  padding: 1rem;
+
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover > .card__icon,
+.card:focus > .card__icon {
+  transform: scale(1.1);
+}
+
+.card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card__name {
+  font-weight: 400;
+
+  transform: translate(-50%, -50%);
+
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+
+  transition: bottom 0.2s ease;
+}
+
+@media screen and (max-width: 1250px) {
+  h1 {
+    display: none;
+  }
+
+  .header {
+    flex-direction: column-reverse;
+  }
+
+  #currentTime {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  #currentDate {
+    text-align: center;
+  }
+}

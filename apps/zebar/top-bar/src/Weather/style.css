@@ -1,0 +1,42 @@
+.weather {
+  display: flex;
+  width: auto;
+  min-width: 3.4rem;
+  padding: 0 6px;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .i-weather {
+    padding: 0;
+    width: 16px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  &.clicked-animated .content {
+    animation: appear 0.2s ease;
+  }
+}
+
+.weather:hover {
+  animation: hoverbutton 0.1s ease forwards;
+}
+
+.weather-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 20px;
+  width: auto;
+  overflow: hidden;
+  opacity: 1;
+}

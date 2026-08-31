@@ -1,0 +1,261 @@
+/* Betterbird userChrome.css — Dracula-inspired dark theme */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ===== GLOBAL ===== */
+:root {
+  --bb-bg: #282A36;
+  --bb-bg-secondary: #21222C;
+  --bb-bg-tertiary: #343746;
+  --bb-fg: #F8F8F2;
+  --bb-fg-muted: #6272A4;
+  --bb-accent: #BD93F9;
+  --bb-accent-hover: #D6ACFF;
+  --bb-green: #50FA7B;
+  --bb-red: #FF5555;
+  --bb-yellow: #F1FA8C;
+  --bb-border: #44475A;
+  --bb-radius: 6px;
+}
+
+/* ===== TOOLBAR ===== */
+#toolbar-menubar,
+#toolbar-tabs,
+#nav-bar,
+#personal-bookmarks,
+#addon-main-bar {
+  background-color: var(--bb-bg-secondary) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#toolbar-menubar {
+  padding: 2px 8px !important;
+}
+
+/* Tab bar */
+#tabs-toolbar {
+  background-color: var(--bb-bg-secondary) !important;
+}
+
+.tab-background {
+  background: var(--bb-bg-secondary) !important;
+  border: none !important;
+  border-radius: var(--bb-radius) var(--bb-radius) 0 0 !important;
+  margin: 0 1px !important;
+  padding: 6px 12px !important;
+}
+
+.tab-background[selected="true"] {
+  background: var(--bb-bg) !important;
+  border-bottom: 2px solid var(--bb-accent) !important;
+}
+
+.tab-background:not([selected="true"]):hover {
+  background: var(--bb-bg-tertiary) !important;
+}
+
+.tab-label {
+  color: var(--bb-fg-muted) !important;
+  font-size: 12px !important;
+}
+
+.tab-background[selected="true"] .tab-label {
+  color: var(--bb-fg) !important;
+}
+
+.tab-icon-image:not([pinned]) {
+  display: none !important;
+}
+
+/* ===== MESSAGE LIST ===== */
+#messageList {
+  background-color: var(--bb-bg) !important;
+}
+
+.thread-row {
+  background-color: var(--bb-bg) !important;
+  border-bottom: 1px solid var(--bb-border) !important;
+  padding: 8px 12px !important;
+}
+
+.thread-row[isSelected="true"] {
+  background-color: var(--bb-bg-tertiary) !important;
+  border-left: 3px solid var(--bb-accent) !important;
+}
+
+.thread-row:hover {
+  background-color: var(--bb-bg-tertiary) !important;
+}
+
+.thread-row .subject {
+  color: var(--bb-fg) !important;
+  font-weight: 600 !important;
+}
+
+.thread-row .sender {
+  color: var(--bb-accent) !important;
+}
+
+.thread-row .date {
+  color: var(--bb-fg-muted) !important;
+}
+
+.thread-row .snippet {
+  color: var(--bb-fg-muted) !important;
+}
+
+/* ===== MESSAGE HEADER ===== */
+#msgHeaderView {
+  background-color: var(--bb-bg-secondary) !important;
+  border-bottom: 1px solid var(--bb-border) !important;
+}
+
+#expandedHeaders2 {
+  color: var(--bb-fg) !important;
+}
+
+.header-name {
+  color: var(--bb-fg-muted) !important;
+}
+
+.header-value {
+  color: var(--bb-fg) !important;
+}
+
+/* ===== COMPOSE ===== */
+#compose-window {
+  background-color: var(--bb-bg) !important;
+}
+
+#compose-header {
+  background-color: var(--bb-bg-secondary) !important;
+  border-bottom: 1px solid var(--bb-border) !important;
+}
+
+#addressRowTemplate,
+#addressRowTemplate input {
+  background-color: var(--bb-bg-tertiary) !important;
+  color: var(--bb-fg) !important;
+  border: 1px solid var(--bb-border) !important;
+  border-radius: var(--bb-radius) !important;
+  padding: 4px 8px !important;
+}
+
+#addressRowTemplate input:focus {
+  border-color: var(--bb-accent) !important;
+  box-shadow: 0 0 0 1px var(--bb-accent) !important;
+}
+
+#compose-body {
+  background-color: var(--bb-bg) !important;
+  color: var(--bb-fg) !important;
+  font-family: 'JetBrainsMono NF', monospace !important;
+  font-size: 13px !important;
+  padding: 12px !important;
+}
+
+/* ===== FOLDER PANE ===== */
+#folderPaneContainer {
+  background-color: var(--bb-bg-secondary) !important;
+}
+
+.tree-row {
+  color: var(--bb-fg) !important;
+  padding: 4px 8px !important;
+}
+
+.tree-row[selected="true"] {
+  background-color: var(--bb-bg-tertiary) !important;
+  color: var(--bb-accent) !important;
+}
+
+.tree-row:hover {
+  background-color: var(--bb-bg-tertiary) !important;
+}
+
+/* ===== STATUS BAR ===== */
+#status-bar {
+  background-color: var(--bb-bg-secondary) !important;
+  border-top: 1px solid var(--bb-border) !important;
+  color: var(--bb-fg-muted) !important;
+  font-size: 11px !important;
+}
+
+/* ===== SCROLLBAR ===== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bb-border) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bb-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bb-fg-muted);
+}
+
+/* ===== BUTTONS ===== */
+.button-text,
+.button-primary,
+button {
+  background-color: var(--bb-bg-tertiary) !important;
+  color: var(--bb-fg) !important;
+  border: 1px solid var(--bb-border) !important;
+  border-radius: var(--bb-radius) !important;
+  padding: 4px 12px !important;
+}
+
+.button-text:hover,
+.button-primary:hover,
+button:hover {
+  background-color: var(--bb-accent) !important;
+  color: var(--bb-bg) !important;
+}
+
+.button-primary {
+  background-color: var(--bb-accent) !important;
+  color: var(--bb-bg) !important;
+}
+
+/* ===== SEARCH BAR ===== */
+#quick-filter-bar-container {
+  background-color: var(--bb-bg-secondary) !important;
+  border-bottom: 1px solid var(--bb-border) !important;
+}
+
+#quick-filter-bar-input {
+  background-color: var(--bb-bg-tertiary) !important;
+  color: var(--bb-fg) !important;
+  border: 1px solid var(--bb-border) !important;
+  border-radius: var(--bb-radius) !important;
+  padding: 4px 8px !important;
+}
+
+#quick-filter-bar-input:focus {
+  border-color: var(--bb-accent) !important;
+}
+
+/* ===== MISC ===== */
+::selection {
+  background-color: var(--bb-accent) !important;
+  color: var(--bb-bg) !important;
+}
+
+tooltip {
+  background-color: var(--bb-bg-secondary) !important;
+  color: var(--bb-fg) !important;
+  border: 1px solid var(--bb-border) !important;
+  border-radius: var(--bb-radius) !important;
+}

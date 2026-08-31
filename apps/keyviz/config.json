@@ -1,0 +1,33 @@
+{
+  "appearance": {
+    "font_family": "JetBrainsMono NF",
+    "font_size": 18,
+    "font_weight": 600,
+    "text_color": "#F8F8F2",
+    "background_color": "#282A36",
+    "border_color": "#BD93F9",
+    "border_width": 2,
+    "border_radius": 8,
+    "background_opacity": 0.85,
+    "padding_horizontal": 16,
+    "padding_vertical": 10,
+    "width": 320,
+    "height": 60,
+    "position": "bottom-center",
+    "offset_x": 0,
+    "offset_y": 40
+  },
+  "display": {
+    "show_modifiers_only": true,
+    "show_cursor_position": false,
+    "group_trigger_keys": true,
+    "show_mouse_clicks": true,
+    "show_windows_key": true,
+    "font_icon_enabled": true,
+    "decay_timeout_ms": 2000,
+    "fade_out_animation": true
+  },
+  "style_presets": {
+    "current_preset": "dracula"
+  }
+}

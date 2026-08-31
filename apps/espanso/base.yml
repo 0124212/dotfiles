@@ -1,0 +1,183 @@
+espanso:
+  version: "2"
+  matcher_headers:
+    title: ".*"
+
+matches:
+  # Email
+  - trigger: "@@"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: script
+        params:
+          - pwsh -Command "[System.Environment]::GetEnvironmentVariable('ESPANSO_EMAIL','User')"
+
+  # Date/Time
+  - trigger: ":dte"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ":dtt"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"
+
+  - trigger: ":dts"
+    replace: "{{mydatetime}}"
+    vars:
+      - name: mydatetime
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M"
+
+  # Unicode / Symbols
+  - trigger: ":shrug"
+    replace: "¯\_(ツ)_/¯"
+
+  - trigger: ":tableflip"
+    replace: "(╯°□°)╯︵ ┻━┻"
+
+  - trigger: ":unflip"
+    replace: "┬─┬ノ( º _ ºノ)"
+
+  - trigger: ":check"
+    replace: "✅"
+
+  - trigger: ":cross"
+    replace: "❌"
+
+  - trigger: ":arrow"
+    replace: "→"
+
+  - trigger: ":arr"
+    replace: "→"
+
+  - trigger: ":dots"
+    replace: "…"
+
+  - trigger: ":copyright"
+    replace: "©"
+
+  - trigger: ":tm"
+    replace: "™"
+
+  - trigger: ":euro"
+    replace: "€"
+
+  - trigger: ":pound"
+    replace: "£"
+
+  # Code snippets
+  - trigger: ":logs"
+    replace: "console.log($1);$0"
+
+  - trigger: ":logd"
+    replace: "console.debug($1);$0"
+
+  - trigger: ":logw"
+    replace: "console.warn($1);$0"
+
+  - trigger: ":loge"
+    replace: "console.error($1);$0"
+
+  - trigger: ":tern"
+    replace: "$1 ? $2 : $3;$0"
+
+  - trigger: ":clg"
+    replace: "console.log($1);$0"
+
+  - trigger: ":clog"
+    replace: "console.log($1);$0"
+
+  - trigger: ":fn"
+    replace: "function $1($2) {\n  $3\n}$0"
+
+  - trigger: ":afn"
+    replace: "const $1 = async ($2) => {\n  $3\n};$0"
+
+  - trigger: ":imp"
+    replace: "import { $1 } from '$2';$0"
+
+  - trigger: ":req"
+    replace: "const $1 = require('$2');$0"
+
+  - trigger: ":cls"
+    replace: "class $1 {\n  $2\n}$0"
+
+  - trigger: ":for"
+    replace: "for (let $1 = 0; $1 < $2; $1++) {\n  $3\n}$0"
+
+  - trigger: ":ife"
+    replace: "if ($1) {\n  $2\n} else {\n  $3\n}$0"
+
+  - trigger: ":doc"
+    replace: "/**\n * $1\n */$0"
+
+  # Rust
+  - trigger: ":rtest"
+    replace: "#[cfg(test)]\nmod tests {\n  use super::*;\n\n  #[test]\n  fn $1() {\n    $2\n  }\n}$0"
+
+  - trigger: ":rmod"
+    replace: "mod $1;\nuse $1::$2;$0"
+
+  # PowerShell
+  - trigger: ":psf"
+    replace: "ForEach-Object { $1 }$0"
+
+  - trigger: ":pswhere"
+    replace: "Where-Object { $1 }$0"
+
+  - trigger: ":psselect"
+    replace: "Select-Object -First 10$0"
+
+  # Git
+  - trigger: ":gcom"
+    replace: "git commit -m \"$1\"$0"
+
+  - trigger: ":gpush"
+    replace: "git push origin $1$0"
+
+  - trigger: ":gst"
+    replace: "git status$0"
+
+  - trigger: ":glog"
+    replace: "git log --oneline -20$0"
+
+  # Typo corrections
+  - trigger: ":teh "
+    replace: "the "
+
+  - trigger: ":taht "
+    replace: "that "
+
+  - trigger: ":adn "
+    replace: "and "
+
+  - trigger: ":wiht "
+    replace: "with "
+
+  - trigger: ":hte "
+    replace: "the "
+
+  - trigger: ":nto "
+    replace: "not "
+
+  - trigger: ":dont "
+    replace: "don't "
+
+  - trigger: ":doesnt "
+    replace: "doesn't "
+
+  - trigger: ":cant "
+    replace: "can't "
+
+  - trigger: ":wont "
+    replace: "won't "

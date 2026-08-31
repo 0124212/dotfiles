@@ -1,0 +1,22 @@
+[
+  {
+    "AppName": "Lively Wallpaper",
+    "AutoUpdate": false,
+    "SelectedDisplayDeviceId": "\\\\?\\DISPLAY#SAM0F13#5&1a3b8f3f&0&UID256#{e6f07b5f-eeec-44af-a194-60fcce665e6e}",
+    "LivelyPropertyValues": {},
+    "DisplayVersion": "1.0.0",
+    "Culture": "en",
+    "Author": "0124212",
+    "Version": 1,
+    "FileName": "monitor.jpg",
+    "Id": "9f36552e-3b54-4c15-a15e-7e2f7d6b0d0a",
+    "LivelyInfo": {
+      "Title": "Static Wallpaper",
+      "Author": "Custom",
+      "Desc": "Clean minimal wallpaper",
+      "License": "Public Domain",
+      "Url": "",
+      "Version": 1
+    }
+  }
+]

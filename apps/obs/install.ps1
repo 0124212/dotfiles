@@ -40,5 +40,6 @@ function Copy-Config {
 
 Copy-Config "$repoRoot\global.ini" "$obsDir\global.ini"
 Copy-Config "$repoRoot\basic\scenes\Rice.json" "$obsDir\basic\scenes\Rice.json"
+Copy-Config "$repoRoot\basic\scenes\Untitled.json" "$obsDir\basic\scenes\Untitled.json"
 
-Write-Host "`nDone! Launch OBS and select the Rice scene collection." -ForegroundColor Cyan
+Write-Host "`nDone! Launch OBS and select the Untitled scene collection." -ForegroundColor Cyan

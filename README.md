@@ -51,6 +51,7 @@ cd rice
 | `install.ps1` | Clone repos + install apps + deploy configs |
 | `scripts/fresh-start.ps1` | Fresh Windows — base tools + git config + everything |
 | `scripts/sync.ps1` | Pull latest from all repos + reapply configs |
+| `scripts/debloat.ps1` | Admin. Debloat + tweak Windows (port of a schneegans autounattend). Removes stock apps, disables SmartScreen/VBS/System Restore — read first |
 
 ## Directory Structure
 
@@ -63,7 +64,8 @@ rice/
 │   └── lively/library.json
 ├── scripts/
 │   ├── fresh-start.ps1
-│   └── sync.ps1
+│   ├── sync.ps1
+│   └── debloat.ps1
 ├── README.md
 ├── links.md
 └── .gitignore

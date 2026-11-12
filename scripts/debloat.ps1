@@ -163,6 +163,17 @@ winget uninstall --id Microsoft.OneDrive --silent --accept-source-agreements
 winget install --id Microsoft.VCRedist.2015+.x64 --silent --accept-package-agreements --accept-source-agreements
 Enable-WindowsOptionalFeature -Online -FeatureName NetFx3 -All -NoRestart
 
+# ---------- Extras ----------
+# Widgets: policy key is TrustedInstaller-locked on a live system, so remove the package instead
+Get-AppxProvisionedPackage -Online | Where-Object DisplayName -eq 'MicrosoftWindows.Client.WebExperience' | Remove-AppxProvisionedPackage -Online -AllUsers
+Get-AppxPackage -AllUsers MicrosoftWindows.Client.WebExperience | Remove-AppxPackage -AllUsers
+# No new 8.3 short names on C: (existing ones left alone)
+fsutil.exe 8dot3name set C: 1
+# Empty taskbar pins
+Remove-Item "$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*" -Force -ErrorAction SilentlyContinue
+SetReg 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband' Favorites ([byte[]](0xFF)) Binary
+Remove-ItemProperty 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband' FavoritesResolve -ErrorAction SilentlyContinue
+
 Stop-Process -Name explorer -Force
 Stop-Transcript
 
